@@ -8,10 +8,10 @@ h4 {
   font-size: 18px;
 }
 
-/*nav,
-nav .nav-wrapper{
-  height: 100px;
-}*/
+.brand-logo {
+  margin-left: 15px;
+}
+
 .parallax img{
   filter: blur(5px);
 }
