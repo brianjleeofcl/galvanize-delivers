@@ -54,7 +54,7 @@
     </header>
     <main class="container">
       <div class="row">
-        <div class="col s12 m12 l7 row">
+        <div class="col s12 m12 l8 row">
           <h3 class="center">Menu</h3>
           <div class="col s12 m6">
             <div class="card">
@@ -91,7 +91,7 @@
             </div>
           </div>
         </div>
-        <div class="col s12 m12 l5">
+        <div class="col s12 m12 l4">
           <h3 class="center">Order</h3>
           <table class="striped">
             <thead>
@@ -99,7 +99,7 @@
                 <th>
                   item
                 </th>
-                <th>
+                <th class="right-align">
                   price
                 </th>
               </tr>
@@ -109,7 +109,7 @@
                 <td>
                   A
                 </td>
-                <td>
+                <td class="right-align">
                   $4.01
                 </td>
               </tr>
@@ -117,7 +117,7 @@
                 <td>
                   B
                 </td>
-                <td>
+                <td class="right-align">
                   $5.01
                 </td>
               </tr>
@@ -125,7 +125,7 @@
                 <td>
                   A
                 </td>
-                <td>
+                <td class="right-align">
                   $4.01
                 </td>
               </tr>
@@ -133,39 +133,61 @@
                 <td>
                   B
                 </td>
-                <td>
+                <td class="right-align">
                   $5.01
                 </td>
               </tr>
             </tbody>
             <tfoot>
               <tr>
-                <td>
+                <td class="right-align">
                   Subtotal
                 </td>
-                <td>
+                <td class="right">
                   $18.04
                 </td>
               </tr>
               <tr>
-                <td>
+                <td class="right-align">
                   Tax
                 </td>
-                <td>
+                <td class="right">
                   $1.80
                 </td>
               </tr>
               <tr>
-                <td>
+                <td class="right-align">
                   Total
                 </td>
-                <td>
+                <td class="right">
                   $19.84
                 </td>
               </tr>
             </tfoot>
           </table>
-
+          <form class="" action="index.html" method="post">
+            <div class="input-field">
+              <label for="name"><i class="material-icons">person</i> Name</label>
+              <input type="text" name="name" value="" autocomplete="name">
+            </div>
+            <div class="input-field">
+              <label for="phone"><i class="material-icons">phone</i> Phone</label>
+              <input type="tel" name="phone" value="" autocomplete="phone">
+            </div>
+            <div class="input-field">
+              <label for="email"><i class="material-icons">email</i> Email</label>
+              <input type="email" name="email" value="" autocomplete="email">
+            </div>
+            <div class="input-field">
+              <label for="address"><i class="material-icons">business</i> Address</label>
+              <input type="text" name="address" value="" autocomplete="address">
+            </div>
+            <div class="center">
+              <button class="btn">
+                Place order
+              </button>
+            </div>
+          </form>
 
 
 
