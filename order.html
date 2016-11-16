@@ -66,7 +66,7 @@
                 <p>
                   Here's a quick fix to make your page at least fit into an iPhone screen.
                 </p>
-                <h6 class="right-align">$49.99</h6>
+                <h6 class="align-to-bottom-card">$49.99</h6>
               </div>
               <div class="card-action">
                 <a>Add to cart</a>
@@ -83,7 +83,7 @@
                 <p>
                   Adds a splash of color and a mild sense of confusion.
                 </p>
-                <h6 class="right-align">$12.99 per chart</h6>
+                <h6 class="align-to-bottom-card">$12.99 per chart</h6>
               </div>
               <div class="card-action">
                 <a>Add to cart</a>
@@ -100,7 +100,13 @@
                 <p>
                   Perfect way to fill all those blank spaces on your page!
                 </p>
-                <h6 class="right-align">$9.99 per photo</h6>
+                <div class="row">
+                  <h6 class="col s8">$9.99 per photo</h6>
+                  <div class="col s4 input-field">
+                    <label for="q3">Quantity</label>
+                    <input type="number" name="q3" value="">
+                  </div>
+                </div>
               </div>
               <div class="card-action">
                 <a>Add to cart</a>
@@ -117,7 +123,7 @@
                 <p>
                   Now with 30% more synergy!
                 </p>
-                <h6 class="right-align">$7.99 per word</h6>
+                <h6 class="align-to-bottom-card">$7.99 per word</h6>
               </div>
               <div class="card-action">
                 <a>Add to cart</a>
@@ -199,7 +205,7 @@
               </tr>
             </tfoot>
           </table>
-          <form class="" action="index.html" method="post">
+          <form>
             <div class="input-field">
               <i class="material-icons prefix blue-text">person</i>
               <label for="name">Name</label>
@@ -215,29 +221,32 @@
               <label for="email">E-mail</label>
               <input type="email" name="email" value="" autocomplete="email">
             </div>
-            <div class="input-field">
-              <label for="address"><i class="material-icons">business</i> Address</label>
-              <textarea class="materialize-textarea" name="address" rows="8" cols="40"></textarea>
-            </div>
-            <div class="row">
-              <div class="col s6 input-field">
-                <label for="city">City</label>
-                <input type="text" name="city" value="">
+            <form>
+              <h5 class="grey-text"><i class="material-icons left blue-text">business</i>Address</h5>
+              <div class="input-field">
+                <label for="streetAddress">Street Address</label>
+                <textarea class="materialize-textarea" name="streetAddress" rows="8" cols="40"></textarea>
+                <div class="row">
+                  <div class="col s5 input-field">
+                    <label for="city">City</label>
+                    <input type="text" name="city" value="">
+                  </div>
+                  <div class="col s4 input-field">
+                    <select name="state">
+                      <option value="" disabled selected>--</option>
+                      <option value="Washington">WA</option>
+                      <option value="California">CA</option>
+                      <option value="Oregon">OR</option>
+                    </select>
+                    <label for="state">State</label>
+                  </div>
+                  <div class="col s3 input-field">
+                    <label for="zip">Zip</label>
+                    <input type="text" name="zip" value="">
+                  </div>
+                </div>
               </div>
-              <div class="col s2 input-field">
-                <label for="state">State</label>
-                <select class="" name="">
-                  <option>--</option>
-                  <option value="Washington">WA</option>
-                  <option value="California">CA</option>
-                </select>
-
-              </div>
-              <div class="col s4 input-field">
-                <label for="zip">Zip</label>
-                <input type="text" name="zip" value="">
-              </div>
-            </div>
+            </form>
             <div class="center">
               <button class="btn">
                 Place order
