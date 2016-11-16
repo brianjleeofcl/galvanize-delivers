@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-    <title>Prefab Corporate Website Incoporated</title>
+    <title>Terrible Website Incoporated</title>
 
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
@@ -19,8 +19,8 @@
       <nav class="blue lighten-1">
         <div class="nav-wrapper">
           <a href="index.html" class="brand-logo">
-            <h1 class="hide-on-small-only">Prefab Corporate Websites Incorporated</h1>
-            <h1 class="hide-on-med-and-up">PCW Inc.</h1>
+            <h1 class="hide-on-small-only">Terrible Websites Incorporated</h1>
+            <h1 class="hide-on-med-and-up">TW Inc.</h1>
           </a>
           <a href="#" class="button-collapse" data-activates="mobile-nav">
             <i class="material-icons">menu</i>
@@ -54,39 +54,73 @@
     </header>
     <main class="container">
       <div class="row">
-        <div class="col s12 m12 l8 row">
+        <div class="col s12 m12 l8 row" id="menu">
           <h3 class="center">Menu</h3>
           <div class="col s12 m6">
             <div class="card">
-              <h5>menu 1</h5>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-              </p>
-            </div>
-          </div>
-          <div class="col s12 m6">
-            <div class="card">
-              <h5>menu 2</h5>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-              </p>
-            </div>
-          </div>
-          <div class="col s12 m6">
-            <div class="card">
-              <h5>menu 3</h5>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-              </p>
-            </div>
-          </div>
-          <div class="col s12 m6">
-            <div class="card">
+              <div class="card-image">
+                <img src="img/mr.png" alt="" />
+              </div>
               <div class="card-content">
-                <h5>menu 4</h5>
+                <h5>Mobile Responsive Beginner Kit</h5>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  Here's a quick fix to make your page at least fit into an iPhone screen.
                 </p>
+                <h6 class="right-align">$49.99</h6>
+              </div>
+              <div class="card-action">
+                <a>Add to cart</a>
+              </div>
+            </div>
+          </div>
+          <div class="col s12 m6">
+            <div class="card">
+              <div class="card-image">
+                <img src="img/chart.png" alt="" />
+              </div>
+              <div class="card-content">
+                <h5>Meaningless Charts</h5>
+                <p>
+                  Adds a splash of color and a mild sense of confusion.
+                </p>
+                <h6 class="right-align">$12.99 per chart</h6>
+              </div>
+              <div class="card-action">
+                <a>Add to cart</a>
+              </div>
+            </div>
+          </div>
+          <div class="col s12 m6">
+            <div class="card">
+              <div class="card-image">
+                <img src="img/photog.jpg" alt="" />
+              </div>
+              <div class="card-content">
+                <h5>Stock Photo Add-on</h5>
+                <p>
+                  Perfect way to fill all those blank spaces on your page!
+                </p>
+                <h6 class="right-align">$9.99 per photo</h6>
+              </div>
+              <div class="card-action">
+                <a>Add to cart</a>
+              </div>
+            </div>
+          </div>
+          <div class="col s12 m6">
+            <div class="card">
+              <div class="card-image">
+                <img src="img/presentation.jpg" alt="" />
+              </div>
+              <div class="card-content">
+                <h5>Buzzword Booster Pack</h5>
+                <p>
+                  Now with 30% more synergy!
+                </p>
+                <h6 class="right-align">$7.99 per word</h6>
+              </div>
+              <div class="card-action">
+                <a>Add to cart</a>
               </div>
             </div>
           </div>
@@ -167,20 +201,42 @@
           </table>
           <form class="" action="index.html" method="post">
             <div class="input-field">
-              <label for="name"><i class="material-icons">person</i> Name</label>
+              <i class="material-icons prefix blue-text">person</i>
+              <label for="name">Name</label>
               <input type="text" name="name" value="" autocomplete="name">
             </div>
             <div class="input-field">
-              <label for="phone"><i class="material-icons">phone</i> Phone</label>
+              <i class="material-icons prefix blue-text">phone</i>
+              <label for="phone">Phone</label>
               <input type="tel" name="phone" value="" autocomplete="phone">
             </div>
             <div class="input-field">
-              <label for="email"><i class="material-icons">email</i> Email</label>
+              <i class="material-icons prefix blue-text">email</i>
+              <label for="email">E-mail</label>
               <input type="email" name="email" value="" autocomplete="email">
             </div>
             <div class="input-field">
               <label for="address"><i class="material-icons">business</i> Address</label>
-              <input type="text" name="address" value="" autocomplete="address">
+              <textarea class="materialize-textarea" name="address" rows="8" cols="40"></textarea>
+            </div>
+            <div class="row">
+              <div class="col s6 input-field">
+                <label for="city">City</label>
+                <input type="text" name="city" value="">
+              </div>
+              <div class="col s2 input-field">
+                <label for="state">State</label>
+                <select class="" name="">
+                  <option>--</option>
+                  <option value="Washington">WA</option>
+                  <option value="California">CA</option>
+                </select>
+
+              </div>
+              <div class="col s4 input-field">
+                <label for="zip">Zip</label>
+                <input type="text" name="zip" value="">
+              </div>
             </div>
             <div class="center">
               <button class="btn">
@@ -188,9 +244,6 @@
               </button>
             </div>
           </form>
-
-
-
         </div>
       </div>
     </main>
@@ -198,7 +251,7 @@
       <div class="container">
         <div class="row">
           <div class="col s12 m6 l4 center black-text">
-            <h4>Prefab Corporate Website Inc.</h4>
+            <h4>Terrible Website Inc.</h4>
             <h6>Say something&mdash;without saying anything!</h6>
           </div>
           <div class="col s12 m6 l4 offset-l4">

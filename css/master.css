@@ -28,3 +28,20 @@ i {
 #previews img{
   width: 100%;
 }
+
+#menu .card{
+  height: 450px;
+}
+
+@media (max-width:600px) {
+  #menu .card{
+    height: 500px;
+  }
+}
+
+#menu .card-action{
+  height: 60px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
