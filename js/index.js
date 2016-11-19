@@ -1,5 +1,13 @@
-$(document).ready(function(){
-  $('.parallax').parallax();
-});
+(function() {
+  'use strict';
 
-$(".button-collapse").sideNav();
+  // parallax
+
+  $(document).ready(() => {
+    $('.parallax').parallax();
+  });
+
+  // side-nav
+
+  $('.button-collapse').sideNav();
+})();

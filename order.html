@@ -13,6 +13,7 @@
     <script defer type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script defer type="text/javascript" src="js/materialize.min.js"></script>
     <script defer src="js/index.js" charset="utf-8"></script>
+    <script defer src="js/order.js" charset="utf-8"></script>
   </head>
   <body>
     <header>
@@ -235,32 +236,30 @@
               <label for="email">E-mail</label>
               <input type="email" name="email" value="" autocomplete="email">
             </div>
-            <form>
-              <h5 class="grey-text"><i class="material-icons left blue-text">business</i>Address</h5>
-              <div class="input-field">
-                <label for="streetAddress">Street Address</label>
-                <textarea class="materialize-textarea" name="streetAddress" rows="8" cols="40"></textarea>
-                <div class="row">
-                  <div class="col s5 input-field">
-                    <label for="city">City</label>
-                    <input type="text" name="city" value="">
-                  </div>
-                  <div class="col s4 input-field">
-                    <select name="state">
-                      <option value="" disabled selected>--</option>
-                      <option value="Washington">WA</option>
-                      <option value="California">CA</option>
-                      <option value="Oregon">OR</option>
-                    </select>
-                    <label for="state">State</label>
-                  </div>
-                  <div class="col s3 input-field">
-                    <label for="zip">Zip</label>
-                    <input type="text" name="zip" value="">
-                  </div>
+            <h5 class="grey-text"><i class="material-icons left blue-text">business</i>Address</h5>
+            <div class="input-field">
+              <label for="streetAddress">Street Address</label>
+              <textarea class="materialize-textarea" name="streetAddress" rows="8" cols="40"></textarea>
+              <div class="row">
+                <div class="col s5 input-field">
+                  <label for="city">City</label>
+                  <input type="text" name="city" value="">
+                </div>
+                <div class="col s4 input-field">
+                  <select name="state">
+                    <option value="" disabled selected>--</option>
+                    <option value="Washington">WA</option>
+                    <option value="California">CA</option>
+                    <option value="Oregon">OR</option>
+                  </select>
+                  <label for="state">State</label>
+                </div>
+                <div class="col s3 input-field">
+                  <label for="zip">Zip</label>
+                  <input type="text" name="zip" value="">
                 </div>
               </div>
-            </form>
+            </div>
             <div class="center">
               <button class="btn">
                 Place order
