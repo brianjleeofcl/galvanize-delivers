@@ -67,9 +67,9 @@
                 <p>
                   Here's a quick fix to make your page at least fit into an iPhone screen.
                 </p>
-                <div class="row attach-to-bottom">
-                  <h6 class="col s12 left-align">$49.99</h6>
-                </div>
+              </div>
+              <div class="card-content">
+                $49.99 (limited to 1)
               </div>
               <div class="card-action">
                 <a class="add-to-cart">Add to cart</a>
@@ -86,9 +86,12 @@
                 <p>
                   Adds a splash of color and a mild sense of confusion.
                 </p>
-                <div class="row attach-to-bottom">
-                  <h6 class="col s8">$12.99 per chart</h6>
-                  <div class="col s4 input-field">
+              </div>
+              <div class="card-content row">
+                <div class="col s12">
+
+                  $12.99 per chart
+                  <div class="input-field inline">
                     <label for="q2">Quantity</label>
                     <input type="number" name="q2" value="">
                   </div>
@@ -109,12 +112,12 @@
                 <p>
                   Perfect way to fill all those blank spaces on your page!
                 </p>
-                <div class="row attach-to-bottom">
-                  <h6 class="col s8">$9.99 per photo</h6>
-                  <div class="col s4 input-field">
-                    <label for="q3">Quantity</label>
-                    <input type="number" name="q3" value="">
-                  </div>
+              </div>
+              <div class="card-content">
+                <h6>$9.99 per photo</h6>
+                <div class="input-field inline">
+                  <label for="q3">Quantity</label>
+                  <input type="number" name="q3" value="">
                 </div>
               </div>
               <div class="card-action">
@@ -132,13 +135,13 @@
                 <p>
                   Now with 30% more synergy!
                 </p>
-                <div class="row attach-to-bottom">
-                  <h6 class="col s8">$7.99 per word</h6>
-                  <div class="col s4 input-field">
+              </div>
+              <div class="card-content">
+                  $7.99 per word:
+                  <div class="input-field inline">
                     <label for="q4">Quantity</label>
                     <input type="number" name="q4" value="">
                   </div>
-                </div>
               </div>
               <div class="card-action">
                 <a class="add-to-cart need-quantity">Add to cart</a>
@@ -151,6 +154,8 @@
           <table class="striped">
             <thead>
               <tr>
+                <th>
+                </th>
                 <th>
                   item
                 </th>
@@ -166,21 +171,21 @@
             </tbody>
             <tfoot>
               <tr>
-                <td colspan="2" class="right-align">
+                <td colspan="3" class="right-align">
                   Subtotal
                 </td>
                 <td id="subtotal" class="right">
                 </td>
               </tr>
               <tr>
-                <td colspan="2" class="right-align">
+                <td colspan="3" class="right-align">
                   Tax
                 </td>
                 <td id="tax" class="right">
                 </td>
               </tr>
               <tr>
-                <td colspan="2" class="right-align">
+                <td colspan="3" class="right-align">
                   Total
                 </td>
                 <td id="total" class="right">
@@ -214,11 +219,8 @@
                   <input type="text" name="city" value="">
                 </div>
                 <div class="col s4 input-field">
-                  <select name="state">
-                    <option value="" disabled selected>--</option>
-                    <option value="Washington">WA</option>
-                    <option value="California">CA</option>
-                    <option value="Oregon">OR</option>
+                  <select id="state" name="state">
+                    <option value="" disabled selected>Select:</option>
                   </select>
                   <label for="state">State</label>
                 </div>

@@ -44,15 +44,10 @@ i {
 }
 
 #menu .card{
-  height: 500px;
+  height: 550px;
 }
 #menu .card h6{
   vertical-align: bottom;
-}
-@media (max-width:600px) {
-  #menu .card{
-    height: 500px;
-  }
 }
 
 #menu .card-action{
