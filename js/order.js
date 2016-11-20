@@ -88,7 +88,7 @@
     return $input.val();
   };
 
-  const retrievePrice = function(item) {
+  const retrieveItemPrice = function(item) {
     switch (item) {
       case 'item1':
         return 49.99;
@@ -105,7 +105,7 @@
 
   const calculatePrice = function($card, quantity) {
     const item = $card.attr('id');
-    const itemPrice = retrievePrice(item);
+    const itemPrice = retrieveItemPrice(item);
 
     return itemPrice * quantity;
   };
@@ -113,10 +113,13 @@
   const createQuantityField = function(quantity) {
     const $quantityField = $('<input>').attr('type', 'number');
 
+    $quantityField.addClass('input-in-table');
+
     return $quantityField.val(quantity);
   };
 
   const addToCart = function($card, quantity) {
+
     const $row = $('<tr>');
     const $del = $('<td>');
     const $delIcon = $('<i>');
@@ -136,8 +139,10 @@
     $delIcon.text('delete');
     $del.append($delIcon);
     $item.text($card.find('h5').text());
+    $item.addClass()
     $price.text(`$${price}`).addClass('right-align price');
     $row.append($del).append($item).append($quantity).append($price);
+    $row.addClass($card.attr('id'))
 
     return $row;
   };
@@ -165,9 +170,27 @@
     $('#total').text(`$${total.toFixed(2)}`);
   };
 
+  const adjustQuantity = function(quantity, id) {
+    const $row = $('#cart .' + id);
+    const curVal = $row.find('input').val();
+
+    $row.find('input').val(parseInt(curVal) + parseInt(quantity));
+
+    return $row;
+  }
+
+  const recalculatePrice = function($row) {
+    const itemPrice = retrieveItemPrice($row.attr('class'));
+    const quantity = $row.find('input').val();
+    const price = itemPrice * quantity;
+
+    $row.find('.price').text(price);
+
+    return;
+  }
+
   // add to cart links
   $('.add-to-cart').click(() => {
-    const $cart = $('#cart');
     const $card = $(event.target).parents('.card');
     const $inputQuantity = $card.find('input[type="number"]');
     let quantity;
@@ -182,7 +205,13 @@
       return;
     }
 
-    $cart.append(addToCart($card, quantity));
+    if ($('#cart tr').hasClass($card.attr('id'))) {
+      const $row = adjustQuantity(quantity, $card.attr('id'));
+      recalculatePrice($row);
+    } else {
+      $('#cart').append(addToCart($card, quantity));
+    }
+
     clearQuantityField($inputQuantity);
     updateTotal();
   });
@@ -211,4 +240,15 @@
   $('#cart').on('mouseleave', '.delete', () => {
     $(event.target).toggleClass('grey-text lighten-2 red-text');
   });
+
+  const updatePrice = function($target) {
+    $target.parent().next()
+  }
+
+  $('#cart').on('change', '.input-in-table', () => {
+    console.log('yup');
+
+    recalculatePrice($(event.target).parents('tr'));
+    updateTotal();
+  })
 })();
