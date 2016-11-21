@@ -243,6 +243,12 @@
       return;
     }
 
+    if ($('#state').val() === '') {
+      Materialize.toast('Please select your state.', 3000);
+
+      return;
+    }
+
     appendSummary();
     $('#modal1').openModal();
   });

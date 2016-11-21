@@ -211,14 +211,14 @@
               <input required class="validate" type="email" name="email" value="" autocomplete="email">
             </div>
             <label for="streetAddress"><i class="material-icons left blue-text">business</i>Street Address</label>
-            <textarea required class="materialize-textarea validate" name="streetAddress" rows="8" cols="40"></textarea>
+            <textarea required class="materialize-textarea validate" name="streetAddress" rows="2" cols="40"></textarea>
             <div class="row">
               <div class="col s5 input-field">
                 <label for="city">City</label>
                 <input required class="validate" type="text" name="city" value="">
               </div>
               <div class="col s4 input-field">
-                <select required class="validate" id="state" name="state">
+                <select class="validate" id="state" name="state">
                   <option value="" disabled selected>Select:</option>
                 </select>
                 <label for="state">State</label>
@@ -229,7 +229,7 @@
               </div>
             </div>
             <div class="center">
-              <button data-target="modal1" class="btn">
+              <button type="submit" data-target="modal1" class="btn">
                 Place order
               </button>
             </div>
