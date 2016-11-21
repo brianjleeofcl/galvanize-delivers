@@ -196,22 +196,25 @@
           </table>
           <form id="order-form">
             <div class="input-field">
-              <i class="material-icons prefix blue-text">person</i>
+              <i class="material-icons prefix">person</i>
               <label for="name">Name</label>
               <input required type="text" name="name" value="" autocomplete="name" class="validate">
             </div>
             <div class="input-field">
-              <i class="material-icons prefix blue-text">phone</i>
+              <i class="material-icons prefix">phone</i>
               <input required type="tel" id="phone" value="" class="validate">
               <label for="phone">Phone</label>
             </div>
             <div class="input-field">
-              <i class="material-icons prefix blue-text">email</i>
+              <i class="material-icons prefix">email</i>
               <label for="email">E-mail</label>
               <input required class="validate" type="email" name="email" value="" autocomplete="email">
             </div>
-            <label for="streetAddress"><i class="material-icons left blue-text">business</i>Street Address</label>
-            <textarea required class="materialize-textarea validate" name="streetAddress" rows="2" cols="40"></textarea>
+            <div class="input-field">
+              <i class="material-icons prefix">business</i>
+              <label for="streetAddress">Street Address</label>
+              <textarea required class="materialize-textarea validate" name="streetAddress" rows="2" cols="40"></textarea>
+            </div>
             <div class="row">
               <div class="col s5 input-field">
                 <label for="city">City</label>
@@ -229,7 +232,7 @@
               </div>
             </div>
             <div class="center">
-              <button type="submit" data-target="modal1" class="btn">
+              <button type="submit" data-target="modal1" class="blue btn waves-effect waves-light">
                 Place order
               </button>
             </div>

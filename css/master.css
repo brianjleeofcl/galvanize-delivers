@@ -34,26 +34,24 @@ th {
   font-weight: 700;
 }
 
-.input-field input[type=text]:focus + label {
-  color: #42a5f5;
-}
-.input-field input[type=text]:focus {
+.input-field input[type=text]:focus,
+.input-field input[type=tel]:focus,
+.input-field input[type=email]:focus,
+.input-field input[type=number]:focus,
+ .input-field select:focus
+ {
   border-bottom: 1px solid #42a5f5;
   box-shadow: 0 1px 0 0 #42a5f5;
 }
-.input-field input[type=tel]:focus + label {
+.input-field label.active {
+  color: #42a5f5 !important;
+}
+textarea.materialize-textarea:focus {
+  border-bottom: 1px solid #42a5f5 !important;
+  box-shadow: 0 1px 0 0 #42a5f5 !important;
+}
+.input-field .prefix.active {
   color: #42a5f5;
-}
-.input-field input[type=tel]:focus {
-  border-bottom: 1px solid #42a5f5;
-  box-shadow: 0 1px 0 0 #42a5f5;
-}
-.input-field input[type=email]:focus + label {
-  color: #42a5f5;
-}
-.input-field input[type=email]:focus {
-  border-bottom: 1px solid #42a5f5;
-  box-shadow: 0 1px 0 0 #42a5f5;
 }
 
 #hero-text {
