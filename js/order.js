@@ -261,6 +261,33 @@
     $('#modal1 .modal-content').append($sumTable).append($sumTotal);
   };
 
+  // checks for unfilled sections in the order form; displays result in toast
+  const checkBlanks = function() {
+    let blank = 0;
+
+    $('#order-form input').each((i) => {
+      if($('#order-form input')[i].value === ''){
+        blank++;
+      }
+    });
+
+    if ($('#order-form textarea').val() === '') {
+      blank++;
+    }
+
+    if ($('#state').val() === null) {
+      blank++;
+    }
+
+    if (blank > 0) {
+      Materialize.toast(`Number of required fields remaining: ${blank}`, 2000);
+    }
+  };
+
+  $('#order-form button').on('click', () => {
+    checkBlanks();
+  });
+
   // if html form validation is complete, checks for cart: if empty, displays a toast message; if not, displays a modal with a summary of order and a button to return to the home screen
   $('#order-form').submit(() => {
     event.preventDefault();
@@ -271,7 +298,7 @@
       return;
     }
 
-    if ($('#state').val() === '') {
+    if ($('#state').val() === null) {
       Materialize.toast('Please select your state.', 3000);
 
       return;
