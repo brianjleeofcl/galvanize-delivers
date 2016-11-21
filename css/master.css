@@ -50,7 +50,8 @@ textarea.materialize-textarea:focus {
   border-bottom: 1px solid #42a5f5 !important;
   box-shadow: 0 1px 0 0 #42a5f5 !important;
 }
-.input-field .prefix.active {
+.input-field .prefix.active,
+.input-field li span {
   color: #42a5f5;
 }
 
