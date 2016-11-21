@@ -6,275 +6,8 @@
     $('select').material_select();
   });
 
-  // data
-  // price of each goods
-  const priceList = {
-    item1: 49.99,
-    item2: 12.99,
-    item3: 9.99,
-    item4: 7.99
-  };
-
-  // states in select
-  const states = [
-    {
-      name: 'Alabama',
-      abbreviation: 'AL',
-      rate: 0.04
-    },
-    {
-      name: 'Alaska',
-      abbreviation: 'AK',
-      rate: 0
-    },
-    {
-      name: 'Arizona',
-      abbreviation: 'AZ',
-      rate: 0.056
-    },
-    {
-      name: 'Arkansas',
-      abbreviation: 'AR',
-      rate: 0.065
-    },
-    {
-      name: 'California',
-      abbreviation: 'CA',
-      rate: 0.075
-    },
-    {
-      name: 'Colorado',
-      abbreviation: 'CO',
-      rate: 0.029
-    },
-    {
-      name: 'Connecticut',
-      abbreviation: 'CT',
-      rate: 0.0635
-    },
-    {
-      name: 'Delaware',
-      abbreviation: 'DE',
-      rate: 0
-    },
-    {
-      name: 'District Of Columbia',
-      abbreviation: 'DC',
-      rate: 0.0575
-    },
-    {
-      name: 'Florida',
-      abbreviation: 'FL',
-      rate: 0.06
-    },
-    {
-      name: 'Georgia',
-      abbreviation: 'GA',
-      rate: 0.04
-    },
-    {
-      name: 'Hawaii',
-      abbreviation: 'HI',
-      rate: 0.04
-    },
-    {
-      name: 'Idaho',
-      abbreviation: 'ID',
-      rate: 0.06
-    },
-    {
-      name: 'Illinois',
-      abbreviation: 'IL',
-      rate: 0.0625
-    },
-    {
-      name: 'Indiana',
-      abbreviation: 'IN',
-      rate: 0.07
-    },
-    {
-      name: 'Iowa',
-      abbreviation: 'IA',
-      rate: 0.06
-    },
-    {
-      name: 'Kansas',
-      abbreviation: 'KS',
-      rate: 0.065
-    },
-    {
-      name: 'Kentucky',
-      abbreviation: 'KY',
-      rate: 0.06
-    },
-    {
-      name: 'Louisiana',
-      abbreviation: 'LA',
-      rate: 0.05
-    },
-    {
-      name: 'Maine',
-      abbreviation: 'ME',
-      rate: 0.055
-    },
-    {
-      name: 'Maryland',
-      abbreviation: 'MD',
-      rate: 0.06
-    },
-    {
-      name: 'Massachusetts',
-      abbreviation: 'MA',
-      rate: 0.0625
-    },
-    {
-      name: 'Michigan',
-      abbreviation: 'MI',
-      rate: 0.06
-    },
-    {
-      name: 'Minnesota',
-      abbreviation: 'MN',
-      rate: 0.06875
-    },
-    {
-      name: 'Mississippi',
-      abbreviation: 'MS',
-      rate: 0.07
-    },
-    {
-      name: 'Missouri',
-      abbreviation: 'MO',
-      rate: 0.04225
-    },
-    {
-      name: 'Montana',
-      abbreviation: 'MT',
-      rate: 0
-    },
-    {
-      name: 'Nebraska',
-      abbreviation: 'NE',
-      rate: 0.055
-    },
-    {
-      name: 'Nevada',
-      abbreviation: 'NV',
-      rate: 0.0685
-    },
-    {
-      name: 'New Hampshire',
-      abbreviation: 'NH',
-      rate: 0
-    },
-    {
-      name: 'New Jersey',
-      abbreviation: 'NJ',
-      rate: 0.07
-    },
-    {
-      name: 'New Mexico',
-      abbreviation: 'NM',
-      rate: 0.05125
-    },
-    {
-      name: 'New York',
-      abbreviation: 'NY',
-      rate: 0.04
-    },
-    {
-      name: 'North Carolina',
-      abbreviation: 'NC',
-      rate: 0.0475
-    },
-    {
-      name: 'North Dakota',
-      abbreviation: 'ND',
-      rate: 0.05
-    },
-    {
-      name: 'Ohio',
-      abbreviation: 'OH',
-      rate: 0.0575
-    },
-    {
-      name: 'Oklahoma',
-      abbreviation: 'OK',
-      rate: 0.045
-    },
-    {
-      name: 'Oregon',
-      abbreviation: 'OR',
-      rate: 0
-    },
-    {
-      name: 'Pennsylvania',
-      abbreviation: 'PA',
-      rate: 0.06
-    },
-    {
-      name: 'Rhode Island',
-      abbreviation: 'RI',
-      rate: 0.07
-    },
-    {
-      name: 'South Carolina',
-      abbreviation: 'SC',
-      rate: 0.06
-    },
-    {
-      name: 'South Dakota',
-      abbreviation: 'SD',
-      rate: 0.045
-    },
-    {
-      name: 'Tennessee',
-      abbreviation: 'TN',
-      rate: 0.07
-    },
-    {
-      name: 'Texas',
-      abbreviation: 'TX',
-      rate: 0.0625
-    },
-    {
-      name: 'Utah',
-      abbreviation: 'UT',
-      rate: 0.047
-    },
-    {
-      name: 'Vermont',
-      abbreviation: 'VT',
-      rate: 0.06
-    },
-    {
-      name: 'Virginia',
-      abbreviation: 'VA',
-      rate: 0.043
-    },
-    {
-      name: 'Washington',
-      abbreviation: 'WA',
-      rate: 0.065
-    },
-    {
-      name: 'West Virginia',
-      abbreviation: 'WV',
-      rate: 0.06
-    },
-    {
-      name: 'Wisconsin',
-      abbreviation: 'WI',
-      rate: 0.05
-    },
-    {
-      name: 'Wyoming',
-      abbreviation: 'WY',
-      rate: 0.04
-    }
-  ];
-
-  for (const state of states) {
+  // 'stateData' variable in data.js, contains state name/abbrev/taxrate
+  for (const state of stateData) {
     const $option = $('<option>');
 
     $option.val(state.name);
@@ -285,7 +18,7 @@
   // functions for add to cart feature
   const checkQuantity = function($input) {
     if ($input.val() === '') {
-      Materialize.toast('Please enter a quantity.', 3000, 'center-screen');
+      Materialize.toast('Please enter a quantity.', 3000);
 
       return '';
     }
@@ -344,7 +77,7 @@
   const retrieveTaxRate = function() {
     const curState = $('#state').val();
 
-    for (const state of states) {
+    for (const state of stateData) {
       if (state.name === curState) {
         return state.rate;
       }
@@ -354,8 +87,12 @@
   };
 
   const updateTotal = function() {
-    const $prices = $('.price').text();
-    const arr = $prices.match(/([^$]+)/g).map(parseFloat);
+    const pricestr = $('.price').text();
+
+    if (pricestr === '') {
+      return;
+    }
+    const arr = pricestr.match(/([^$]+)/g).map(parseFloat);
     const subtotal = arr.reduce((a, b) => a + b);
     const taxRate = retrieveTaxRate();
 
@@ -455,5 +192,40 @@
     updateTotal();
   });
 
+  $('#phone').change(() => {
+    const phone = $('#phone').val();
+    const phoneRegEx = /^\D*(\d{3})(\D*)(\d{3})(\D*)(\d{4})\D*$/;
+
+    if (phone.match(phoneRegEx)) {
+      $('#phone').val(phone.replace(phoneRegEx, '($1) $3-$5'));
+    } else {
+      $('#phone').val('');
+      Materialize.toast('Please enter a valid 10-digit phone number', 3000);
+    }
+  });
+
   $('#state').change(updateTotal);
+
+  // const appendSummary = function() {
+  //   const $sumTable = $('<table>')
+  //   const $rows = $('#cart tr')
+  //
+  //   for (const row of $rows) {
+  //
+  //   }
+  //
+  // };
+
+  $('#order-form').submit(() => {
+    event.preventDefault();
+
+    if ($('#cart').children().length === 0) {
+      Materialize.toast('Cart is currently empty.', 3000);
+
+      return;
+    }
+
+    // appendSummary();
+    $('#modal1').openModal();
+  });
 })();

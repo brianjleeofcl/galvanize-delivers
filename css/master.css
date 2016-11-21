@@ -28,12 +28,6 @@ i {
   bottom: 40px;
 }
 
-.center-screen {
-  position: fixed;
-  left: 38%;
-  background-color: blue;
-}
-
 #hero-text {
   position: relative;
   top: 25%;
