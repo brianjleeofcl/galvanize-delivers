@@ -148,9 +148,37 @@
       const $row = adjustQuantity(quantity, $card.attr('id'));
 
       recalculatePrice($row);
-    } else if (!$(event.target).hasClass('need-quantity') &&
+    }
+    else if (!$(event.target).hasClass('need-quantity') &&
     $('#cart tr').hasClass($card.attr('id'))) {
       Materialize.toast('This item can only be added once.', 3000);
+    }
+    else {
+      $('#cart').append(addToCart($card, quantity));
+    }
+
+    clearQuantityField($inputQuantity);
+    updateTotal();
+  });
+
+  // allow same for submit (enter key) on quantity input instead of clicking add to cart
+  $('.quantity-submit').submit(() => {
+    event.preventDefault();
+
+    const $card = $(event.target).parents('.card');
+    const $inputQuantity = $card.find('input[type="number"]');
+    const quantity = $inputQuantity.val();
+
+    if (quantity === '') {
+      Materialize.toast('Please enter a quantity.', 3000);
+
+      return;
+    }
+
+    if ($('#cart tr').hasClass($card.attr('id'))) {
+      const $row = adjustQuantity(quantity, $card.attr('id'));
+
+      recalculatePrice($row);
     } else {
       $('#cart').append(addToCart($card, quantity));
     }
