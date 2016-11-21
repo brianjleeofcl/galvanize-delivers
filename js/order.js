@@ -1,11 +1,12 @@
 (function() {
   'use strict';
 
-  // select dropdown
+  // select dropdown initializer
   $(document).ready(() => {
     $('select').material_select();
   });
 
+  // generate options for select dropdown
   // 'stateData' variable in data.js, contains state name/abbrev/taxrate
   for (const state of stateData) {
     const $option = $('<option>');
@@ -15,23 +16,14 @@
     $('#state').append($option);
   }
 
-  // functions for add to cart feature
-  const checkQuantity = function($input) {
-    if ($input.val() === '') {
-      Materialize.toast('Please enter a quantity.', 3000);
-
-      return '';
-    }
-
-    return $input.val();
-  };
-
+  // priceList: object in data.js
   const calculatePrice = function($card, quantity) {
     const itemPrice = priceList[$card.attr('id')];
 
     return itemPrice * quantity;
   };
 
+  // cell within table specific for items with quantity variable
   const createQuantityField = function(quantity) {
     const $quantityField = $('<input>').attr('type', 'number');
 
@@ -40,12 +32,13 @@
     return $quantityField.val(quantity);
   };
 
+  // create rows, append to table in page
   const addToCart = function($card, quantity) {
     const $row = $('<tr>');
     const $del = $('<td>');
     const $delIcon = $('<i>');
-    const $item = $('<td>');
-    const $quantity = $('<td>');
+    const $item = $('<td>').addClass('item-name');
+    const $quantity = $('<td>').addClass('order-quantity');
     const $price = $('<td>');
     const price = calculatePrice($card, quantity);
 
@@ -60,7 +53,6 @@
     $delIcon.text('delete');
     $del.append($delIcon);
     $item.text($card.find('h5').text());
-    $item.addClass();
     $price.text(`$${price}`).addClass('right-align price');
     $row.append($del).append($item).append($quantity).append($price);
     $row.addClass($card.attr('id'));
@@ -74,6 +66,7 @@
     return;
   };
 
+  // using state selector, updates taxrate
   const retrieveTaxRate = function() {
     const curState = $('#state').val();
 
@@ -86,6 +79,7 @@
     return 'nostate';
   };
 
+  // each time invoked, sums price column of each row for subtotal, calculates tax and total, updates text content in table
   const updateTotal = function() {
     const pricestr = $('.price').text();
 
@@ -111,6 +105,7 @@
     }
   };
 
+  // when item already exists in cart, updates quantity of cart instead of adding new rows
   const adjustQuantity = function(quantity, id) {
     const $row = $('#cart .'.concat(id));
     const curVal = $row.find('input').val();
@@ -120,29 +115,31 @@
     return $row;
   };
 
+  // recalculates price if quantity changes
+  // priceList: object in data.js
   const recalculatePrice = function($row) {
     const itemPrice = priceList[$row.attr('class')];
     const quantity = $row.find('input').val();
     const price = itemPrice * quantity;
 
     $row.find('.price').text(`$${price}`);
-
-    return;
   };
 
-  // add to cart links
+  // click event listener on add to cart; will retrieve quantity info and result in A) either 1. new row in table; 2. update quantity of existing row; 3. display toast requesting quantity and B) updates subtotal, tax and total
   $('.add-to-cart').click(() => {
     const $card = $(event.target).parents('.card');
     const $inputQuantity = $card.find('input[type="number"]');
     let quantity;
 
     if ($(event.target).hasClass('need-quantity')) {
-      quantity = checkQuantity($inputQuantity);
+      quantity = $inputQuantity.val();
     } else {
       quantity = 1;
     }
 
     if (quantity === '') {
+      Materialize.toast('Please enter a quantity.', 3000);
+
       return;
     }
 
@@ -162,12 +159,14 @@
     updateTotal();
   });
 
+  // if row deleted is the last row in the table, clears values for subtotal, tax and total
   const resetTotal = function() {
     $('#subtotal').text('');
     $('#tax').text('');
     $('#total').text('');
   };
 
+  // delegates event listener on rows created in table; will remove the row the clicker belongs to and recalculate subtotal, tax and total
   $('#cart').on('click', '.delete', () => {
     const $row = $(event.target).parents('tr');
 
@@ -179,19 +178,18 @@
     }
   });
 
-  $('#cart').on('mouseenter', '.delete', () => {
+  // changes icon color on mouse hover
+  $('#cart').on('mouseenter mouseleave', '.delete', () => {
     $(event.target).toggleClass('grey-text lighten-2 red-text');
   });
 
-  $('#cart').on('mouseleave', '.delete', () => {
-    $(event.target).toggleClass('grey-text lighten-2 red-text');
-  });
-
+  // updates values when quantity is changed directly in table
   $('#cart').on('change', '.input-in-table', () => {
     recalculatePrice($(event.target).parents('tr'));
     updateTotal();
   });
 
+  // phone number validation; should accept most formating of 3-3-4 groupings of ten-digit numbers (or just ten numbers) and change it automatically to (###) ###-####; clear field and generate toast if it doesn't fit in this format
   $('#phone').change(() => {
     const phone = $('#phone').val();
     const phoneRegEx = /^\D*(\d{3})(\D*)(\d{3})(\D*)(\d{4})\D*$/;
@@ -204,18 +202,38 @@
     }
   });
 
+  // each time state selector is changed, will recalculate tax and total with newly retreived state taxrate
   $('#state').change(updateTotal);
 
-  // const appendSummary = function() {
-  //   const $sumTable = $('<table>')
-  //   const $rows = $('#cart tr')
-  //
-  //   for (const row of $rows) {
-  //
-  //   }
-  //
-  // };
+  // adds table with info on items ordered in the order confirmation modal
+  const appendSummary = function() {
+    const $sumTable = $('<table>');
+    const $rows = $('#cart tr');
+    const $sumTotal = $('<h5>');
+    const total = $('#total').text();
 
+    $rows.each((index) => {
+      const $sumRow = $('<tr>');
+      const $item = $('<td>');
+      const $quantity = $('<td>');
+
+      $item.text($($rows[index]).children('.item-name').text());
+
+      if ($($rows[index]).hasClass('item1')) {
+        $quantity.text('1');
+      } else {
+        $quantity.text($($rows[index]).find($('input')).val());
+      }
+
+      $sumRow.append($item).append($quantity);
+      $sumTable.append($sumRow);
+    });
+
+    $sumTotal.text(`Total paid: ${total}`).addClass('right-align');
+    $('#modal1 .modal-content').append($sumTable).append($sumTotal);
+  };
+
+  // if html form validation is complete, checks for cart: if empty, displays a toast message; if not, displays a modal with a summary of order and a button to return to the home screen
   $('#order-form').submit(() => {
     event.preventDefault();
 
@@ -225,7 +243,7 @@
       return;
     }
 
-    // appendSummary();
+    appendSummary();
     $('#modal1').openModal();
   });
 })();

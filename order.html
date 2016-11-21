@@ -210,25 +210,22 @@
               <label for="email">E-mail</label>
               <input required class="validate" type="email" name="email" value="" autocomplete="email">
             </div>
-            <label for="address"><i class="material-icons left blue-text">business</i>Address</label>
-            <div name="address" class="input-field">
-              <label for="streetAddress">Street Address</label>
-              <textarea required class="materialize-textarea validate" name="streetAddress" rows="8" cols="40"></textarea>
-              <div class="row">
-                <div class="col s5 input-field">
-                  <label for="city">City</label>
-                  <input required class="validate" type="text" name="city" value="">
-                </div>
-                <div class="col s4 input-field">
-                  <select required class="validate" id="state" name="state">
-                    <option value="" disabled selected>Select:</option>
-                  </select>
-                  <label for="state">State</label>
-                </div>
-                <div class="col s3 input-field">
-                  <label for="zip">Zip</label>
-                  <input required type="text" name="zip" value="" pattern="\d{5}" class="validate">
-                </div>
+            <label for="streetAddress"><i class="material-icons left blue-text">business</i>Street Address</label>
+            <textarea required class="materialize-textarea validate" name="streetAddress" rows="8" cols="40"></textarea>
+            <div class="row">
+              <div class="col s5 input-field">
+                <label for="city">City</label>
+                <input required class="validate" type="text" name="city" value="">
+              </div>
+              <div class="col s4 input-field">
+                <select required class="validate" id="state" name="state">
+                  <option value="" disabled selected>Select:</option>
+                </select>
+                <label for="state">State</label>
+              </div>
+              <div class="col s3 input-field">
+                <label for="zip">Zip</label>
+                <input required type="text" name="zip" value="" pattern="\d{5}" class="validate">
               </div>
             </div>
             <div class="center">
@@ -243,6 +240,7 @@
         <div class="modal-content">
           <h3>Order Confirmation</h3>
           <p>Thanks for shopping at Terrible Websites Inc.</p>
+          <h5>Order Summary:</h5>
         </div>
         <div class="modal-footer">
           <a href="index.html" class="modal-action modal-close waves-effect waves-green btn-flat">back to home</a>
