@@ -11,6 +11,9 @@ h4 {
 i {
   vertical-align: bottom;
 }
+th {
+  text-transform: uppercase;
+}
 
 .brand-logo {
   margin-left: 15px;
@@ -27,6 +30,9 @@ i {
   position: absolute;
   bottom: 40px;
 }
+.total-row {
+  font-weight: 700;
+}
 
 #hero-text {
   position: relative;
@@ -39,6 +45,13 @@ i {
 
 #menu .card{
   height: 550px;
+}
+#menu .card-image{
+  max-height: 250px;
+}
+#menu .card img{
+  max-height: 250px;
+  object-fit: cover;
 }
 #menu .card h6{
   vertical-align: bottom;
